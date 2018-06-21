@@ -17,7 +17,8 @@ example data for posting
 {
 	"title": "The Post Title",
 	"content": "The Post Content",
-	"meta": "Meow"
+	"meta": "Meta Content postmeta",
+	"tags": ["hello", "world"]
 }
 ```
 

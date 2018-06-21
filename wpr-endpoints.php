@@ -26,22 +26,28 @@ function wpr_rest_route() {
 		'/route/',
 		array(
 			'methods'  => 'POST',
-			'callback' => 'wpdt_post_event',
+			'callback' => 'wpdt_create_post',
+		),
+		array(
+			'methods'  => 'GET',
+			'callback' => 'wpdt_get_post',
 		)
 	);
 }
 
-function wpdt_post_event( $request ) {
+function wpdt_create_post( $request ) {
 
 	$title      = $request->get_param( 'title' );
 	$content    = $request->get_param( 'content' );
 	$meta_value = $request->get_param( 'meta' );
+	$tags       = $request->get_param( 'tags' );
 
 	$post_id = wp_insert_post( array(
 		'post_title'   => $title,
 		'post_content' => $content,
 //		'meta_input'   => array( META_KEY => $meta_value ),
-		'post_type'    => POST_TYPE
+		'post_type'    => POST_TYPE,
+		'tags_input'   => $tags
 	) );
 
 	/**
@@ -54,4 +60,11 @@ function wpdt_post_event( $request ) {
 
 	return $post_id;
 
+}
+
+function wpdt_get_post($response){
+//	$data = "hello world";
+$data = $response['message'];
+
+return $data;
 }
