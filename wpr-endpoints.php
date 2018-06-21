@@ -26,16 +26,16 @@ function wpr_rest_route() {
 		'/route/',
 		array(
 			'methods'  => 'POST',
-			'callback' => 'wpdt_create_post',
+			'callback' => 'wpr_create_post',
 		),
 		array(
 			'methods'  => 'GET',
-			'callback' => 'wpdt_get_post',
+			'callback' => 'wpr_get_post',
 		)
 	);
 }
 
-function wpdt_create_post( $request ) {
+function wpr_create_post( $request ) {
 
 	$title      = $request->get_param( 'title' );
 	$content    = $request->get_param( 'content' );
@@ -62,7 +62,7 @@ function wpdt_create_post( $request ) {
 
 }
 
-function wpdt_get_post($response){
+function wpr_get_post($response){
 //	$data = "hello world";
 $data = $response['message'];
 
