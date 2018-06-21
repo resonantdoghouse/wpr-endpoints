@@ -30,7 +30,12 @@ function wpr_rest_route()
         array(
             'methods' => 'POST',
             'callback' => 'wpr_create_post',
-        ),
+        )
+    );
+
+    register_rest_route(
+        REST_NAMESPACE,
+        REST_ROUTE,
         array(
             'methods' => 'GET',
             'callback' => 'wpr_get_post',
@@ -68,8 +73,6 @@ function wpr_create_post($request)
 
 function wpr_get_post($response)
 {
-//	$data = "hello world";
-    $data = $response['message'];
-
+    $data = 'hello world';
     return $data;
 }
