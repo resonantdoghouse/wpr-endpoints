@@ -17,13 +17,15 @@ if ( ! function_exists( 'add_action' ) ) {
 
 define( "POST_TYPE", "post" );
 define( "META_KEY", "post_meta_text" );
+define("REST_NAMESPACE", "wpr/v1");
+define("REST_ROUTE", "/route/");
 
 add_action( 'rest_api_init', 'wpr_rest_route' );
 
 function wpr_rest_route() {
 	register_rest_route(
-		'wpr/v1',
-		'/route/',
+		REST_NAMESPACE,
+		REST_ROUTE,
 		array(
 			'methods'  => 'POST',
 			'callback' => 'wpr_create_post',
