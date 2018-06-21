@@ -11,7 +11,10 @@ Fastest setup for testing
  - Install app for testing [Postman](https://www.getpostman.com/)
  - Basic Auth Setup [Tutorial](https://code.tutsplus.com/tutorials/wp-rest-api-setting-up-and-using-basic-authentication--cms-24762)
 
-example data for posting 
+
+**rest endpoint `wp-json/wpr/v1/route/`**
+
+**example data for posting**
 
 ```
 {
@@ -25,5 +28,5 @@ example data for posting
 If you are testing with [Custom Field Suite](http://customfieldsuite.com/) here is a sample field
 
 ```
-[{"post_title":"Post Meta","post_name":"post-meta","cfs_fields":[{"id":"1","name":"post_meta_text","label":"Post Meta Text","type":"text","notes":"","parent_id":0,"weight":0,"options":{"default_value":"Some Post Meta Text","required":"0"}}],"cfs_rules":{"post_types":{"operator":"==","values":["post"]}},"cfs_extras":{"order":"0","context":"normal","hide_editor":"0"}}]
+[{"post_title":"Post Meta","post_name":"post-meta","cfs_fields":[{"id":"1","name":"post_meta_text","label":"Post Meta Text","type":"text","notes":"","parent_id":0,"weight":0,"options":{"default_value":"Some Post Meta Text","required":"0"}}],"cfs_rules":{"post_types":{"operator":"==","values":["post","tribe_events"]}},"cfs_extras":{"order":"0","context":"normal","hide_editor":"0"}}]
 ```
